@@ -13,7 +13,6 @@ export default function Enter(props) {
     )
 }
 
-
 function SignInButton() {
     const signInWithGoogle = async () => {
         await auth.signInWithPopup(googleAuthProvider);
@@ -24,7 +23,7 @@ function SignInButton() {
         </button>
     );
 }
-function SignOutButton() {
+export function SignOutButton() {
     return <button onClick={() => auth.signOut()}>Sign Out</button>
 }
 function UsernameForm() {
@@ -92,15 +91,6 @@ function UsernameForm() {
                     <button type="submit" className="btn-green" disabled={!isValid}>
                         Choose
                     </button>
-
-                    <h3>Debug State</h3>
-                    <div>
-                        Username: {formValue}
-                        <br />
-                        Loading: {loading.toString()}
-                        <br />
-                        Username valid: {isValid.toString()}
-                    </div>
                 </form>
             </section>
         )
